@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var app = require('./app');
 var port = process.env.PORT || 3977;
-
+mongoose.Promise = global.Promise;
 mongoose.createConnection('mongodb://localhost:27017/Musify', (err,res)=>{
     if(err){
         throw err

@@ -40,10 +40,13 @@ function saveUser(req, res){
             console.log("user.password", user);
             if(user.name != null && user.surname != null && user.email != null){
                 user.save((err, userStored) => {
+                    console.log("entro aqui");
                     if(err){
+                        console.log('Error al guardar el usuario')
                         message.push('Error al guardar el usuario')
                     }else{
                         if(!userStored){
+                            console.log('No se ha registrado el usuario');
                             res.status(404).send('No se ha registrado el usuario')
                         }else{
                             res.status(200).send({user: userStored})
