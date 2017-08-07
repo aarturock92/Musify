@@ -9,7 +9,7 @@ var user_routes = require('./routes/user')
 
 
 //Configuración 
-app.use(bodyParse.urlencoded({extended: false}));
+app.use(bodyParse.urlencoded({extended: true}));
 app.use(bodyParse.json())
 
 //Configuración cabeceras http
